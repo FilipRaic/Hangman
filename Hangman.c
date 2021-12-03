@@ -17,7 +17,7 @@ int main()
 
     time_t t;
     srand(time(&t));
-    int tmp = rand() % 4;
+    int tmp = rand() % 6;
 
     strcpy(text, textBase[tmp]);
 
