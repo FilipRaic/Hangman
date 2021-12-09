@@ -11,7 +11,7 @@ int main()
     char choice;
     char textBase[6][15] = {"anticipate", "programing", "example", "advice", "approach", "cater"};
     char text[15];
-    char* tmpTxt;
+    char* tmpTxt; //Array used to display underscores instead of the letters in the word
     char** hang;
     int repeat = 1, tmpMistakes = 0, mistakes = 0;
 
@@ -73,6 +73,7 @@ int main()
             if (choice == text[i])
                 tmpTxt[i] = choice;
             else
+
                 tmpMistakes++;
         }
 
@@ -95,6 +96,8 @@ int main()
         free(hang[i]);
     free(hang);
 
+    printf("\n");
+    system("pause"); //So that the terminal does not close immediately after printing the end message when the application is run through the executable file
     return 0;
 }
 
@@ -129,4 +132,6 @@ void ClearScreen()
     cursorPosition.X = 0;
     cursorPosition.Y = 0;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cursorPosition);
+    /*Used instead of system("cls") because the system call interferes with subsequent outputs
+    and completely rearranges the how the elements are printed to the terminal*/
 }
